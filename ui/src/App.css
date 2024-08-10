@@ -1,0 +1,23 @@
+body {
+  margin: 50px 30px;
+}
+
+.input-group {
+  min-width: 50vw;
+  max-width: 600px;
+}
+
+.form-control {
+  height: 50px;
+}
+
+.invalid-date-error-message {
+  color: #ff0000d4;
+  position: absolute;
+}
+
+@media screen and (max-width: 992px) {
+  table {
+    width: 904px !important;
+  }
+}
