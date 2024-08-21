@@ -10,7 +10,7 @@
           "libelle": "MacBook Pro",
           "valeur": 4000000,
           "dateDebut": "2023-12-25T00:00:00.000Z",
-          "dateFin": null,
+          "dateFin": "2024-08-30T16:30:55.063Z",
           "tauxAmortissement": 5
         },
         {
@@ -35,31 +35,11 @@
         },
         {
           "possesseur": { "nom": "John Doe" },
-          "libelle": "MacBook Pro",
-          "valeur": 4000000,
-          "dateDebut": "2023-12-25T00:00:00.000Z",
-          "dateFin": null,
+          "libelle": "montre vintage",
+          "valeur": "2000000",
+          "dateDebut": "2024-06-20T16:28:44.000Z",
+          "dateFin": "2024-08-17T21:00:00.000Z",
           "tauxAmortissement": 5
-        },
-        {
-          "possesseur": { "nom": "John Doe" },
-          "libelle": "Alternance",
-          "valeur": 0,
-          "dateDebut": "2022-12-31T21:00:00.000Z",
-          "dateFin": null,
-          "tauxAmortissement": null,
-          "jour": 1,
-          "valeurConstante": 500000
-        },
-        {
-          "possesseur": { "nom": "John Doe" },
-          "libelle": "Survie",
-          "valeur": 0,
-          "dateDebut": "2022-12-31T21:00:00.000Z",
-          "dateFin": null,
-          "tauxAmortissement": null,
-          "jour": 2,
-          "valeurConstante": -300000
         }
       ]
     }

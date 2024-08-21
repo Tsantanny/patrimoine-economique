@@ -1,1 +1,254 @@
+/*todo global style */
+:root {
+  --bg: #f3f3f3;
+  --bg-white: #f7f7f7;
+  --charcoal: #454851ff;
+  --blue: #2c30ff;
+  --eerie-black: #262626;
+  --color1: #c3c3c3;
+  --color2: #dfdcdc;
+  --white: #fbf7f4;
+  --color3: #fdfdfd;
+  --shadow: 4px 6px 11px -7px #0000003d;
+}
 
+* {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.btn-secondary {
+  color: var(--eerie-black) !important;
+  background: var(--color2);
+  border: none;
+}
+
+.btn-secondary:hover {
+  background: #bebebe;
+}
+
+.btn-light {
+  background: var(--color3);
+}
+.btn-light:hover {
+  background: var(--white);
+  border: none !important;
+}
+
+.btn-primary {
+  background: var(--blue);
+}
+.btn-dark:hover {
+  background-color: #313131 !important;
+}
+.btn {
+  border: none !important;
+  padding-block: 9px;
+  padding-inline: 20px;
+  border-radius: 10px;
+  font-weight: 520;
+  font-size: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+h3 {
+  font-weight: 500 !important;
+}
+/*todo header */
+.nav-bar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+.nav-bar .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-bar .container div {
+  display: flex;
+  gap: 50px;
+  padding-block: 12px;
+  padding-inline: 40px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  height: fit-content;
+  background: var(--eerie-black);
+}
+
+.nav-bar a {
+  color: var(--white);
+  text-decoration: none;
+  transition: 0.2s linear;
+}
+
+.nav-bar a:hover {
+  color: var(--color2);
+  text-decoration: none;
+}
+
+/*todo table */
+.possessions-list {
+  padding: 20px 30px;
+  border-radius: 30px;
+  border: 1px solid var(--color1);
+  border-radius: 15px;
+}
+
+.possessions-list a {
+  text-decoration: none !important;
+}
+
+.possessions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.possessions-header button {
+  height: fit-content;
+}
+
+.table th {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: var(--charcoal);
+}
+.table th,
+.table td {
+  padding-block: 10px;
+  vertical-align: middle;
+  background: transparent;
+}
+.table th {
+  font-size: 15px;
+}
+
+.actions-btn {
+  display: flex;
+  gap: 10px;
+  width: fit-content;
+}
+
+.possessions-list a {
+  color: var(--bg-white) !important;
+}
+
+/* todo create possession */
+.create-possession {
+  padding: 40px 30px;
+  position: relative;
+  border-radius: 30px;
+  border: 1px solid var(--color1);
+  border-radius: 15px;
+}
+
+.create-possession form button {
+  width: 100%;
+}
+
+.create-possession .type {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.create-possession .type .btn-secondary {
+  color: var(--bg-white) !important;
+}
+.create-possession h4 {
+  font-weight: 500 !important;
+}
+
+.create-possession form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/*todo page patrimoine */
+
+/* todo date range */
+.select-date-range .jour {
+  width: "100%";
+}
+
+.side-bar h6,
+.side-bar h5 {
+  font-weight: 400;
+}
+
+.side-bar .value {
+  color: var(--blue);
+  font-size: 22px;
+}
+
+.evolution-title input,
+.evolution-title button {
+  height: fit-content;
+}
+
+.nav-bar-patrimoine {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  width: calc(100vw - 360px);
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+.nav-bar-patrimoine a:hover {
+  color: var(--color1);
+  text-decoration: none;
+}
+.nav-bar-patrimoine .wrapper {
+  display: flex;
+  width: 100%;
+  padding-inline: 30px;
+  justify-content: space-between;
+}
+.nav-bar-patrimoine .wrapper div {
+  display: flex;
+  gap: 50px;
+  padding-block: 12px;
+  padding-inline: 40px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  height: fit-content;
+  background: var(--eerie-black);
+}
+
+.nav-bar-patrimoine a {
+  color: var(--white);
+  text-decoration: none;
+  transition: 0.2s linear;
+}
+.side-bar {
+  width: 360px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: var(--color3);
+  box-shadow: var(--shadow);
+  padding-inline: 20px;
+}
+
+.chart-container {
+  height: 450px;
+  margin-left: 400px;
+  margin-top: 90px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
