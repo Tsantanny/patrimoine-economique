@@ -1,26 +1,20 @@
-# Project Setup and Usage
+# Project setup
 
-To use this project, follow these steps:
+# to run the project, follow these steps : 
 
-## 1. Navigate to the `ui` directory
-
-Open your terminal and run:
-```bash
-cd ui
-```
-## 2. Install the necessary dependencies
-
-Once you are in the ui directory, install the required packages by running:
+## 1. Install Dependencies
 ```bash
 npm install
 ```
 
-## 3. Start the development server
-
+## 2. Start the backend server
 ```bash
-npm run dev
+cd backend
+node server.js
 ```
 
-## 4. Access the application
-
-After the server has started, open your web browser and go to the address indicated in the terminal. This is typically http://localhost:5173 or another port.
+## 3. Run the UI
+```bash
+cd ui 
+npm run dev
+```
