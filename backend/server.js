@@ -1,16 +1,15 @@
 import express from "express";
 import cors from "cors";
+import {routerPossession, routerPatrimoine } from "./routes/index.js";
 
 const port = 8080;
 const app = express();
 
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
-import possessionRouter from "./routes/possession.js";
-import patrimoineRouter from "./routes/patrimoine.js";
 
-app.use("/possession", possessionRouter );
-app.use("/patrimoine", patrimoineRouter);
+app.use("/possession", routerPossession );
+app.use("/patrimoine", routerPatrimoine);
 
 app.listen(port, () => console.log("server running on port " + port));

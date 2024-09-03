@@ -7,10 +7,10 @@ import Flux from "../../models/possessions/Flux.js";
 
 export const dataPath = "../data/data.json";
 
-const router = Router();
+export const routerPossession = Router();
 
 // avoir la liste des possessions
-router.get("/", async (req, res, next) => {
+routerPossession.get("/", async (req, res, next) => {
   try {
     let loadedData = await readFile(dataPath);
 
@@ -68,7 +68,7 @@ router.get("/", async (req, res, next) => {
 });
 
 // créer une nouvelle posssesion
-router.post("/", async (req, res, next) => {
+routerPossession.post("/", async (req, res, next) => {
   const { libelle, valeur, dateDebut, tauxAmortissement, jour } = req.body;
   let data = await readFile(dataPath);
 
@@ -132,7 +132,7 @@ router.post("/", async (req, res, next) => {
 });
 
 // mettre à jour une possession par son libelle
-router.put("/:libelle", async (req, res) => {
+routerPossession.put("/:libelle", async (req, res) => {
   let data = await readFile(dataPath);
   const { libelle } = req.params;
   const { newLibelle, dateFin } = req.body;
@@ -172,7 +172,7 @@ router.put("/:libelle", async (req, res) => {
 });
 
 // cloturer une possession
-router.put("/:libelle/close", async (req, res) => {
+routerPossession.put("/:libelle/close", async (req, res) => {
   let data = await readFile(dataPath).then((res) => res);
 
   const { libelle } = req.params;
@@ -204,4 +204,3 @@ router.put("/:libelle/close", async (req, res) => {
   }
 });
 
-export default router;

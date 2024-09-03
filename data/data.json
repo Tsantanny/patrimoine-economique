@@ -40,6 +40,14 @@
           "dateDebut": "2024-06-20T16:28:44.000Z",
           "dateFin": "2024-08-17T21:00:00.000Z",
           "tauxAmortissement": 5
+        },
+        {
+          "possesseur": { "nom": "John Doe" },
+          "libelle": "voiture",
+          "valeur": "55500000",
+          "dateDebut": "2024-08-29T07:49:04.000Z",
+          "dateFin": null,
+          "tauxAmortissement": 5
         }
       ]
     }
