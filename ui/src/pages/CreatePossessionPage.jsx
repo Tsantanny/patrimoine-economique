@@ -6,14 +6,7 @@ import Header from "../components/Header";
 import CreatePossessionForm from "../components/CreatePossessionForm";
 
 function CreatePossessionPage() {
-  const [type, setType] = useState(true);
-  const [libelle, setLibelle] = useState("");
-  const [valeur, setValeur] = useState("");
-  const [taux, setTaux] = useState("");
-  const [dateDebut, setDateDebut] = useState(null);
-  const [jour, setJour] = useState("");
-
-  function handleSubmit() {
+  function handleSubmit(libelle, valeur, taux, dateDebut, jour) {
     const newPossessionData = jour
       ? {
           libelle: libelle,
@@ -35,12 +28,6 @@ function CreatePossessionPage() {
         res.data.status == "ok"
           ? toast.success(res.data.message)
           : toast.error(res.data.message);
-        setTaux(0);
-        setLibelle("");
-        setValeur("");
-        setJour("");
-        setTaux("");
-        setDateDebut(null);
       });
     }
   }
@@ -49,21 +36,7 @@ function CreatePossessionPage() {
     <>
       <Header></Header>
       <div className="container d-flex justify-content-center mt-4">
-        <CreatePossessionForm
-          onSubmit={handleSubmit}
-          type={type}
-          onTypeClick={(type) => setType(type)}
-          libelle={libelle}
-          onLibelleChange={(value) => setLibelle(value)}
-          valeur={valeur}
-          onValeurChange={(value) => setValeur(value)}
-          taux={taux}
-          onTauxChange={(value) => setTaux(value)}
-          dateDebut={dateDebut}
-          onDateChange={(value) => setDateDebut(value)}
-          jour={jour}
-          onJourChange={(value) => setJour(value)}
-        >
+        <CreatePossessionForm onSubmit={handleSubmit}>
           <Toaster
             position="top-center"
             reverseOrder={false}

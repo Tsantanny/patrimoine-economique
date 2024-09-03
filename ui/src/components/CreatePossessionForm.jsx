@@ -1,22 +1,15 @@
 import { DatePicker } from "rsuite";
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-function CreatePossessionForm({
-  onSubmit,
-  type,
-  onTypeClick,
-  libelle,
-  onLibelleChange,
-  valeur,
-  onValeurChange,
-  taux,
-  onTauxChange,
-  dateDebut,
-  onDateChange,
-  jour,
-  onJourChange,
-  children,
-}) {
+function CreatePossessionForm({ onSubmit, children }) {
+  const [type, setType] = useState(true);
+  const [libelle, setLibelle] = useState("");
+  const [valeur, setValeur] = useState("");
+  const [taux, setTaux] = useState("");
+  const [dateDebut, setDateDebut] = useState(null);
+  const [jour, setJour] = useState("");
+
   return (
     <div className="create-possession col-6">
       {children}
@@ -26,13 +19,13 @@ function CreatePossessionForm({
         <div>
           <button
             className={type ? "btn btn-secondary" : "btn btn-light"}
-            onClick={() => onTypeClick(true)}
+            onClick={() => setType(true)}
           >
             Possession
           </button>
           <button
             className={!type ? "btn btn-secondary" : "btn btn-light"}
-            onClick={() => onTypeClick(false)}
+            onClick={() => setType(false)}
           >
             Flux
           </button>
@@ -41,7 +34,13 @@ function CreatePossessionForm({
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          onSubmit();
+          onSubmit(libelle, valeur, taux, dateDebut, jour);
+          setTaux(0);
+          setLibelle("");
+          setValeur("");
+          setJour("");
+          setTaux("");
+          setDateDebut(null);
         }}
       >
         <input
@@ -49,7 +48,7 @@ function CreatePossessionForm({
           className="form-control"
           placeholder="libellé"
           value={libelle}
-          onChange={(e) => onLibelleChange(e.target.value)}
+          onChange={(e) => setLibelle(e.target.value)}
           required
         />
         <div className="d-flex gap-3">
@@ -58,7 +57,7 @@ function CreatePossessionForm({
             className="form-control"
             placeholder="valeur"
             value={valeur}
-            onChange={(e) => onValeurChange(e.target.value)}
+            onChange={(e) => setValeur(e.target.value)}
             required
           />
           <input
@@ -66,7 +65,7 @@ function CreatePossessionForm({
             className="form-control"
             placeholder="taux d'amortissement"
             taux={taux}
-            onChange={(e) => onTauxChange(e.target.value)}
+            onChange={(e) => setTaux(e.target.value)}
             required
           />
         </div>
@@ -76,7 +75,7 @@ function CreatePossessionForm({
           style={{ width: "100%", color: "#E5E7EB" }}
           format="yyyy-MM-dd"
           value={dateDebut}
-          onChange={onDateChange}
+          onChange={(value) => setDateDebut(value)}
         />
 
         <AnimatePresence>
@@ -92,7 +91,7 @@ function CreatePossessionForm({
               min={0}
               value={jour}
               required={!type ? true : false}
-              onChange={(e) => onJourChange(e.target.value)}
+              onChange={(e) => setJour(e.target.value)}
             />
           )}
         </AnimatePresence>

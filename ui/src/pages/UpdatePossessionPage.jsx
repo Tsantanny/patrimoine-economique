@@ -1,23 +1,23 @@
-import { useNavigate, useParams } from "react-router-dom";
-import { useState } from "react";
-import instance from "../config/axiosConfig";
-
 import toast, { Toaster } from "react-hot-toast";
-import UpdatePossessionForm from "../components/UpdatePossessionForm";
+import { useNavigate, useParams } from "react-router-dom";
+
 import Header from "../components/Header";
+import instance from "../config/axiosConfig";
+import UpdatePossessionForm from "../components/UpdatePossessionForm";
 
 function UpdatePossessionPage() {
   const { libelle } = useParams();
   const navigate = useNavigate();
-  const [updatedLibelle, setUpdatedLibelle] = useState(libelle);
-  const [dateFin, setDateFin] = useState("");
-  function handleSubmit() {
+
+  function handleSubmit(updatedLibelle, dateFin) {
+    dateFin = new Date(dateFin).toISOString();
+
     if (!dateFin) {
       toast.error("Veuillez selectionner une date");
     } else {
       const body = {
         newLibelle: updatedLibelle,
-        dateFin: typeof dateFin !== "string" ? dateFin.toISOString() : "",
+        dateFin: dateFin,
       };
       instance
         .put(`/possession/${libelle}`, body)
@@ -33,16 +33,10 @@ function UpdatePossessionPage() {
 
   return (
     <>
-      <Header></Header>
+      <Header />
 
       <div className="container d-flex justify-content-center mt-5">
-        <UpdatePossessionForm
-          onSubmit={handleSubmit}
-          libelle={updatedLibelle}
-          onLibelleChange={(value) => setUpdatedLibelle(value)}
-          dateFin={dateFin}
-          onDateFinChange={(value) => setDateFin(value)}
-        >
+        <UpdatePossessionForm onSubmit={handleSubmit} libelle={libelle}>
           <Toaster
             position="top-center"
             reverseOrder={false}

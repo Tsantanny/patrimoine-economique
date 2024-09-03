@@ -1,14 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { DatePicker } from "rsuite";
 
-function UpdatePossessionForm({
-  onSubmit,
-  libelle,
-  onLibelleChange,
-  dateFin,
-  onDateFinChange,
-  children,
-}) {
+function UpdatePossessionForm({ onSubmit, libelle, children }) {
+  const [updatedLibelle, setUpdatedLibelle] = useState(libelle);
+  const [dateFin, setDateFin] = useState("");
   const libelleRef = useRef(null);
   useEffect(() => {
     libelleRef.current.focus();
@@ -22,15 +17,15 @@ function UpdatePossessionForm({
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          onSubmit();
+          onSubmit(updatedLibelle, dateFin);
         }}
       >
         <input
           type="text"
           className="form-control"
           placeholder="libellé"
-          value={libelle}
-          onChange={(e) => onLibelleChange(e.target.value)}
+          value={updatedLibelle}
+          onChange={(e) => setUpdatedLibelle(e.target.value)}
           ref={libelleRef}
         />
 
@@ -40,7 +35,7 @@ function UpdatePossessionForm({
           style={{ width: "100%", color: "#E5E7EB" }}
           format="yyyy-MM-dd"
           value={dateFin}
-          onChange={(value) => onDateFinChange(value)}
+          onChange={(value) => setDateFin(value)}
         />
 
         <button className="btn btn-primary mt-3">Mettre à jour</button>

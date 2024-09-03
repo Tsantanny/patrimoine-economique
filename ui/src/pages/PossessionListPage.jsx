@@ -31,7 +31,7 @@ function PossessionListPage() {
 
   return (
     <>
-      <Header></Header>
+      <Header />
       <div className="container mt-5">
         <PossessionList
           possessions={possessions}

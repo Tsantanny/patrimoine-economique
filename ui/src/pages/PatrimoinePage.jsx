@@ -78,7 +78,7 @@ function PatrimoinePage() {
 
   return (
     <>
-      <HeaderPatrimoine></HeaderPatrimoine>
+      <HeaderPatrimoine />
 
       <div className="side-bar py-3">
         <div className="d-flex flex-column mt-4 evolution-title">
