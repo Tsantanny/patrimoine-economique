@@ -145,6 +145,21 @@ h3 {
   background: var(--charcoal);
 }
 
+.spin-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  top: 0;
+  background: white;
+  width: 100vw;
+}
+
+.spin-container i {
+  font-size: 50px;
+}
+
 .possessions-list a {
   color: var(--bg-white) !important;
 }

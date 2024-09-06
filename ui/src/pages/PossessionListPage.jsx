@@ -32,6 +32,13 @@ function PossessionListPage() {
   return (
     <>
       <Header />
+      {!possessions && (
+        <div className="spin-container">
+          <div className="d-flex justify-content-center spin">
+            <i className="fas fa-circle-notch fa-spin"></i>
+          </div>
+        </div>
+      )}
       <div className="container mt-5">
         <PossessionList
           possessions={possessions}
