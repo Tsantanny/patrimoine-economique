@@ -141,6 +141,10 @@ h3 {
   width: fit-content;
 }
 
+.actions-btn .btn-secondary {
+  background: var(--charcoal);
+}
+
 .possessions-list a {
   color: var(--bg-white) !important;
 }
