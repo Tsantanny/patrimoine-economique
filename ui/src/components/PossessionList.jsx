@@ -41,9 +41,7 @@ function PossessionList({ possessions, getData, errorMessage }) {
                   <tr key={index}>
                     <th scope="row">{e.libelle}</th>
                     <td>
-                      {formatNumber(
-                        e.valeur == 0 ? e.valeurConstante : e.valeur
-                      )}
+                      {formatNumber(e.jour ? e.valeurConstante : e.valeur)}
                     </td>
                     <td>{formatDate(new Date(e.dateDebut))}</td>
                     <td>
@@ -68,7 +66,7 @@ function PossessionList({ possessions, getData, errorMessage }) {
                               .put(`/possession/${e.libelle}/close`)
                               .then(() => getData());
                           }}
-                          disabled={e.dateFin ? true : false}
+                          // disabled={e.dateFin ? true : false}
                         >
                           Cloturer
                         </button>

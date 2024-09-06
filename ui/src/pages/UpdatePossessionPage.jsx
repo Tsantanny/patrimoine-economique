@@ -10,25 +10,29 @@ function UpdatePossessionPage() {
   const navigate = useNavigate();
 
   function handleSubmit(updatedLibelle, dateFin) {
-    dateFin = new Date(dateFin).toISOString();
-
+    dateFin = dateFin ? new Date(dateFin).toISOString() : null;
+    let body;
     if (!dateFin) {
-      toast.error("Veuillez selectionner une date");
+      // toast.error("Veuillez selectionner une date");
+      body = {
+        newLibelle: updatedLibelle,
+        dateFin: null,
+      };
     } else {
-      const body = {
+      body = {
         newLibelle: updatedLibelle,
         dateFin: dateFin,
       };
-      instance
-        .put(`/possession/${libelle}`, body)
-        .then(() => {
-          toast.success("La possession a été mis à jour avec succes");
-          setTimeout(() => {
-            navigate("/");
-          }, 2000);
-        })
-        .catch(() => toast.error("La requete a échoué"));
     }
+    instance
+      .put(`/possession/${libelle}`, body)
+      .then(() => {
+        toast.success("La possession a été mis à jour avec succes");
+        setTimeout(() => {
+          navigate("/");
+        }, 2000);
+      })
+      .catch(() => toast.error("La requete a échoué"));
   }
 
   return (

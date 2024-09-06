@@ -79,7 +79,13 @@ function PatrimoinePage() {
   return (
     <>
       <HeaderPatrimoine />
-
+      {!patrimoineValue && (
+        <div className="spin-container">
+          <div className="d-flex justify-content-center spin">
+            <i class="fas fa-spinner fa-pulse"></i>
+          </div>
+        </div>
+      )}
       <div className="side-bar py-3">
         <div className="d-flex flex-column mt-4 evolution-title">
           <h6 className="mb-2">Suivi de l'évolution de votre patrimoine</h6>

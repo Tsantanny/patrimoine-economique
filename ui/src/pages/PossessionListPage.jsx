@@ -35,7 +35,7 @@ function PossessionListPage() {
       {!possessions && (
         <div className="spin-container">
           <div className="d-flex justify-content-center spin">
-            <i className="fas fa-circle-notch fa-spin"></i>
+            <i class="fas fa-spinner fa-pulse"></i>
           </div>
         </div>
       )}

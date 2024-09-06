@@ -30,7 +30,7 @@ routerPossession.get("/", async (req, res, next) => {
           const { possesseurs, possessions } = data;
           return possessions
             .map((p) => {
-              if (p.valeur === 0) {
+              if (p.jour) {
                 return new Flux(
                   new Personne(p.possesseur.nom),
                   p.libelle,
