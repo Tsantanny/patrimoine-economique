@@ -17,7 +17,7 @@ function PossessionList({ possessions, getData, errorMessage }) {
         <h3>Liste des possessions</h3>
         <Link to="/possession/create" className="btn btn-primary">
           <i className="fas fa-plus"></i>
-          <span className="mx-2">Créer une nouvelle possession</span>
+          <span className="mx-2">Ajouter</span>
         </Link>
       </div>
       <table className="table">
