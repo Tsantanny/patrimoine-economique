@@ -18,13 +18,13 @@ function CreatePossessionForm({ onSubmit, children }) {
         <h6>Selectionner le type :</h6>
         <div>
           <button
-            className={type ? "btn btn-secondary" : "btn btn-light"}
+            className={type ? "btn create" : "btn btn-light"}
             onClick={() => setType(true)}
           >
             Possession
           </button>
           <button
-            className={!type ? "btn btn-secondary" : "btn btn-light"}
+            className={!type ? "btn create" : "btn btn-light"}
             onClick={() => setType(false)}
           >
             Flux

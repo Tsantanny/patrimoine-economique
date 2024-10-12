@@ -17,7 +17,7 @@
   font-weight: 500;
 }
 
-.btn-secondary {
+.btn-secondary,.create {
   color: var(--eerie-black) !important;
   background: var(--color2);
   border: none;
